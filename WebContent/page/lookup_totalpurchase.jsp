@@ -22,7 +22,7 @@
 	try {
 		Class.forName("oracle.jdbc.OracleDriver");
 		Connection conn = DriverManager.getConnection
-		("jdbc:oracle:thin:@//122.128.169.32:1521/xe", "sdh_6", "1234");
+		("jdbc:oracle:thin:@//localhost:1521/xe", "system", "1234");
 		Statement stmt = conn.createStatement();
 		String query = "SELECT SALE.SALE_ID SALE_ID, " +
 				"PRODUCT.NAME PRODUCT_NAME, " +
