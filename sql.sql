@@ -2,6 +2,37 @@ CREATE SEQUENCE SALES_SEQ
 INCREMENT BY 1
 START WITH 16;
 
+
+
+CREATE TABLE PRODUCT (
+	product_id number(10) not null,
+	name varchar2(40),
+	price number(10),
+	category_id number(10),
+	constraint PK_PRODUCT primary key (product_id)
+);
+
+
+
+CREATE TABLE CATEGORY (
+	category_id number(10) not null,
+	name varchar2(20),
+	constraint PK_CATEGORY primary key (category_id)
+);
+
+
+
+CREATE TABLE SALE (
+	sale_id number(10) not null,
+	product_id number(10) not null,
+	purchase_date date,
+	sale_price number(10) not null,
+	amount number(5) not null,
+	constraint PK_SALE primary key (sale_id)
+);
+
+
+
 INSERT INTO "SDH_6"."PRODUCT" (PRODUCT_ID, NAME, PRICE, CATEGORY_ID) VALUES ('1', '컴퓨터', '1000000', '1');
 INSERT INTO "SDH_6"."PRODUCT" (PRODUCT_ID, NAME, PRICE, CATEGORY_ID) VALUES ('2', '태블릿 PC', '800000', '1');
 INSERT INTO "SDH_6"."PRODUCT" (PRODUCT_ID, NAME, PRICE, CATEGORY_ID) VALUES ('3', '핸드폰', '1200000', '1');
