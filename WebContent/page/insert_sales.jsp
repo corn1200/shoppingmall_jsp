@@ -22,6 +22,11 @@ function submit_form() {
 		document.input_form.sale_date.focus();
 		return;
 	}
+	if (document.input_form.saled_product.selectedIndex <= 0) {
+		alert("판매 상품을 선택하여 주세요");
+		document.input_form.saled_product.focus();
+		return;
+	}
 	alert("정상적으로 처리되었습니다!");
 	document.input_form.submit();
 }
@@ -35,6 +40,7 @@ function reset_form() {
 			<td>판매한 상품</td>
 			<td>
 				<select name="saled_product" >
+				<option value="0">값을 선택해주세요</option>
 					<%
 						Statement stmt_product = conn.createStatement();
 						ResultSet rs_product = stmt_product.executeQuery
